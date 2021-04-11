@@ -1,4 +1,10 @@
 .all-content {
-    overflow-y: auto;
-    height: calc(100vh - 70px);
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: #0f171e;
+  
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }

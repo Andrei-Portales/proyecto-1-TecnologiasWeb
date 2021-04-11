@@ -1,0 +1,83 @@
+@import "../../../../node_modules/animate.css/animate.min.css";
+
+.container {
+  margin-right: 8px;
+  height: 165px;
+  width: 305px;
+  position: relative;
+}
+
+.item-image {
+  height: inherit;
+  width: inherit;
+  border-radius: 2px;
+}
+
+.preview {
+  display: block;
+
+  z-index: 1;
+
+  position: absolute;
+  top: -10px;
+  //   left: -5px;
+  width: 305px;
+  background-color: #1a242f;
+  
+  //box-shadow: 2px 2px #000;
+  border-radius: 7px;
+
+  animation: fadeIn; //zoomIn;
+  animation-duration: 400ms;
+
+  & img {
+    height: 165px;
+    width: inherit;
+    border-radius: 2px;
+  }
+}
+
+.content-movie-preview {
+  margin: 20px;
+}
+
+.title-movie {
+  margin-top: 10px;
+  color: #e3e4e6;
+  font-weight: bold;
+}
+
+.description-movie {
+  margin-top: 10px;
+  color: #e3e4e6;
+  font-size: 0.8rem;
+}
+
+.data-movie {
+  display: inline-flex;
+  margin-top: 15px;
+  color: #e3e4e6;
+  font-size: 0.8rem;
+}
+
+.icon-movie-data {
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+
+  & img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.clasification-movie {
+  font-weight: bold;
+  font-size: 0.7rem;
+
+  border: 1px solid #e3e4e6;
+  border-radius: 2px;
+  padding-left: 3px;
+  padding-right: 3px;
+}
