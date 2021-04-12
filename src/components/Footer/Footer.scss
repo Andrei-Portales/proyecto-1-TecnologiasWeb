@@ -1,0 +1,39 @@
+.all-content-footer {
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 25px;
+  background-color: #0f171e;
+  display: inline-block;
+}
+
+.image-logo {
+  height: 35px;
+  width: 110px;
+  margin-left: auto;
+  margin-right: auto;
+
+  & img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.text-content {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+
+  & a {
+    color: #49abf3;
+    margin-right: 15px;
+    text-decoration: none;
+
+    &:hover{
+        color: #6fdffe;
+    }
+  }
+
+  & div {
+    color: #999999;
+  }
+}

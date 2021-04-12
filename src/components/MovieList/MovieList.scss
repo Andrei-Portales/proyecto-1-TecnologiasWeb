@@ -25,6 +25,7 @@
   
 
   align-content: flex-start;
+  justify-content: start;
   
 
   overflow-y: hidden;
@@ -34,12 +35,6 @@
   &::-webkit-scrollbar {
     display: none;
   }
-}
-
-.initial-space {
-  height: 100%;
-  width: 50px;
-  color: transparent;
 }
 
 .button-change {

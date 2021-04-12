@@ -1,17 +1,3 @@
-@import "../../../node_modules/bootstrap";
-
-@font-face {
-  font-family: "AmazonEmber";
-  src: local("AmazonEmber"),
-    url(../../assets/fonts/AmazonEmber_Rg.ttf) format("ttf");
-}
-
-@font-face {
-  font-family: "AmazonEmberBd";
-  src: local("AmazonEmberBd"),
-    url(../../assets/fonts/AmazonEmber_Bd.ttf) format("ttf");
-}
-
 .main-nav {
   //background-color: black; //#1a242f;
   height: 70px;
@@ -28,6 +14,7 @@
 .options {
   height: 100%;
   align-items: center;
+  display: inline-flex;
   //background-color: red;
   width: 100%;
 }

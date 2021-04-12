@@ -105,8 +105,6 @@ class MovieList extends Component {
               this.container = node;
             }}
           >
-            <div className="initial-space">.........</div>
-
             {this.props.section.movies.map((e) => {
               return (
                 <MovieListItem
@@ -118,6 +116,7 @@ class MovieList extends Component {
           </ul>
 
           {this.buildControls()}
+          
         </div>
       </div>
     );

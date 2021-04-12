@@ -1,0 +1,138 @@
+.container-video-list {
+  width: 100%;
+  //height: 600px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+.title-avances {
+  font-weight: bold;
+  font-size: 1.4rem;
+  display: inline-flex;
+  margin-left: 40px;
+
+  & .prime {
+    color: #00a6df;
+  }
+
+  & .avances {
+    color: white;
+    margin-left: 6px;
+  }
+}
+
+.subtitle-avances {
+  margin-left: 40px;
+  margin-top: 3px;
+  color: #ebeced;
+  font-size: 0.8rem;
+}
+
+.video-container {
+  width: 100%;
+  margin-top: 15px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+.bubble-video-options {
+  width: calc(100vw * 0.6);
+  height: calc(100vh * 0.55);
+  border-radius: 15px;
+  display: inline-flex;
+}
+
+.avance-video {
+  width: 63%;
+  background-color: black;
+  border-bottom-right-radius: 15px;
+  border-top-right-radius: 15px;
+  padding: 1px;
+
+  & video {
+    height: 100%;
+    width: 100%;
+    border-bottom-right-radius: inherit;
+    border-top-right-radius: inherit;
+    outline: none;
+  }
+}
+
+.avance-info {
+  width: 37%;
+  background-color: black;
+  border-bottom-left-radius: 15px;
+  border-top-left-radius: 15px;
+  position: relative;
+  //   display: inline-block;
+  //   justify-content: space-evenly;
+  padding: 15px;
+  padding-right: 26px;
+  padding-left: 26px;
+
+  & .title-movie {
+    color: #fff;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .info-content {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+.image-preview {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+
+    & img {
+        height: inherit;
+        width: 100%;
+        object-fit: fill;
+       // filter: blur(100px);
+    }
+}
+
+.info-buttons {
+  display: inline-flex;
+  align-items: center;
+}
+
+.play-container {
+  display: inline-flex;
+  padding: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background-color: #0f79af;
+  border-radius: 30px;
+  align-items: center;
+
+  & img {
+    height: 20px;
+    width: 20px;
+  }
+
+  & div {
+    color: white;
+    margin-left: 25px;
+  }
+}
+
+.add-button-info {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: black;
+  border: 2px solid white;
+  margin-left: 15px;
+}
+
+.info-spacer {
+  height: 65%;
+  width: 100%;
+}

@@ -1,7 +1,6 @@
-import React from 'react';
+import React from "react";
 import "./DropMenu.scss";
 import addIcon from "../../../assets/icons/add-icon.svg";
-
 
 const dropMenu = (props) => {
   return (
@@ -19,18 +18,22 @@ const dropMenu = (props) => {
       <div className="menu-section">
         <ul>
           <li>
-            <img
-              src="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/kid-1.png"
-              alt="Star avatar"
-              className="star-avatar"
-            ></img>
-            Infantil
+            <div className="list-item-with-icon">
+              <img
+                src="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/kid-1.png"
+                alt="Star avatar"
+                className="star-avatar"
+              ></img>
+              <div>Infantil</div>
+            </div>
           </li>
           <li>
-            <div className="add-avatar">
-              <img src={addIcon} alt="Add Icon"></img>
+            <div className="list-item-with-icon">
+              <div className="add-avatar">
+                <img src={addIcon} alt="Add Icon"></img>
+              </div>
+              <div>Añadir perfil</div>
             </div>
-            Añadir perfil
           </li>
           <li>Editar perfiles</li>
           <li>Mas infomacion</li>

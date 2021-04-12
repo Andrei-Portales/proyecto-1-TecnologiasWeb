@@ -34,7 +34,7 @@ class SearchComponent extends Component {
 
   render() {
     return (
-      <div className="input-profile d-flex flex-row">
+      <div className="input-profile">
         <div className="container-ele">
           <img src={searchIcon} alt="Search icon" className="icon-search"></img>
           <input

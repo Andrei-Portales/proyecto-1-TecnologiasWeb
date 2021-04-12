@@ -3,6 +3,9 @@ import Carrousel from "../../components/Carrousel/Carrousel";
 import Navbar from "../../components/NavBar/NavBar";
 import MovieList from "../../components/MovieList/MovieList";
 import "./Home.scss";
+import Footer from '../../components/Footer/Footer';
+
+import MovieListVideo from '../../components/MovieListVideo/MovieListVideo';
 
 // Dummy Data
 import { moviesLists } from "../../utils/dummy-data";
@@ -15,10 +18,20 @@ class Home extends Component {
 
         <div className="all-content">
           <Carrousel />
+          
           {moviesLists.map((e) => (
             <MovieList key={e.title} section={e} />
           ))}
+
+          <MovieListVideo/>
+
+          {moviesLists.map((e) => (
+            <MovieList key={e.title} section={e} />
+          ))}
+
+          <Footer/>
         </div>
+        
       </div>
     );
   }

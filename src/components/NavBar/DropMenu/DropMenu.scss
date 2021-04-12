@@ -54,6 +54,12 @@
   align-self: center;
 }
 
+.list-item-with-icon{
+  
+  display: inline-flex;
+  align-items: center;
+}
+
 .add-avatar {
   height: 30px;
   width: 30px;
@@ -61,10 +67,13 @@
   border-radius: 50%;
   background-color: #425265;
   position: relative;
-  text-align: center;
+  // text-align: center;
+  display: inline-flex;
+  align-items: center;
 
   & img {
     content: "";
+    align-self: center;
     height: 12px;
     width: 12px;
   }

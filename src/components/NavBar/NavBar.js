@@ -2,6 +2,7 @@ import React from "react";
 import "./NavBar.scss";
 import SearchComponent from "./SearchComponent/SearchComponent";
 
+
 const items = [
   {
     title: "Inicio",
@@ -33,7 +34,7 @@ const NavBar = (props) => {
 
   return (
     <div className="main-nav">
-      <div className="options d-flex flex-row">
+      <div className="options ">
         <div>
           <img
             src="https://amazonuk.gcs-web.com/system/files-encrypted/nasdaq_kms/inline-images/Prime_Video_Logo.png"
