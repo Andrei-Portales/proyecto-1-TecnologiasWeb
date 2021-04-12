@@ -1,0 +1,40 @@
+.icon-container {
+  position: relative;
+}
+
+.icon-preview {
+  height: 22px;
+  width: 22px;
+  margin-left: 15px;
+
+  & img {
+    height: inherit;
+    width: inherit;
+  }
+}
+
+.popup-info {
+  position: absolute;
+  z-index: 2;
+  bottom: 36px;
+
+  border-radius: 5px;
+  padding: 7px;
+  background-color: #425265;
+
+  color: #dee2e6;
+  font-weight: bold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 16px;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-top: 10px solid #425265;
+  }
+}

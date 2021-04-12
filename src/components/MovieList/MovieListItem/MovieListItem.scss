@@ -23,7 +23,7 @@
   //   left: -5px;
   width: 305px;
   background-color: #1a242f;
-  
+
   //box-shadow: 2px 2px #000;
   border-radius: 7px;
 
@@ -38,7 +38,10 @@
 }
 
 .content-movie-preview {
-  margin: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
 }
 
 .title-movie {
@@ -55,7 +58,7 @@
 
 .data-movie {
   display: inline-flex;
-  margin-top: 15px;
+  margin-top: 10px;
   color: #e3e4e6;
   font-size: 0.8rem;
 }
@@ -81,3 +84,32 @@
   padding-left: 3px;
   padding-right: 3px;
 }
+
+.play-data {
+  display: flex;
+  justify-content: space-between;
+  
+
+  & div {
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+.play-icon {
+  height: 35px;
+  width: 35px;
+
+
+  & img {
+    height: inherit;
+    width: inherit;
+  }
+
+  & div {
+    color: #e3e4e6;
+    margin-left: 5px;
+    font-weight: bold;
+  }
+}
+
