@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import "./SearchComponent.scss";
-import searchIcon from "../../../assets/icons/search.svg";
-import cancelIcon from "../../../assets/icons/cancel.svg";
-import dropDownIcon from "../../../assets/icons/drop-down-arrow.svg";
-import dropUpIcon from "../../../assets/icons/drop-up-arrow.svg";
+import React, { Component } from 'react';
+import './SearchComponent.scss';
+import searchIcon from '../../../assets/icons/search.svg';
+import cancelIcon from '../../../assets/icons/cancel.svg';
+import dropDownIcon from '../../../assets/icons/drop-down-arrow.svg';
+import dropUpIcon from '../../../assets/icons/drop-up-arrow.svg';
 
-import DropMenu from "../DropMenu/DropMenu";
+import DropMenu from '../DropMenu/DropMenu';
 
 class SearchComponent extends Component {
   constructor() {
@@ -13,55 +13,54 @@ class SearchComponent extends Component {
     this.state = {
       showErase: false,
       isOpen: false,
-      value: "",
+      value: '',
     };
   }
 
   onTextChange(event) {
     this.setState({
       value: event.target.value,
-      showErase: event.target.value.trim() !== "",
+      showErase: event.target.value.trim() !== '',
     });
   }
 
   clearText() {
-    this.setState({ value: "" });
+    this.setState({ value: '' });
   }
 
   openDropDown() {
-    this.setState({ isOpen: !this.state.isOpen });
+    const { isOpen } = this.state;
+    this.setState({ isOpen: !isOpen });
   }
 
   render() {
+    const { value, isOpen, showErase } = this.state;
     return (
       <div className="input-profile">
         <div className="container-ele">
-          <img src={searchIcon} alt="Search icon" className="icon-search"></img>
+          <img src={searchIcon} alt="Search icon" className="icon-search" />
           <input
             className="search-input"
             placeholder="Buscar"
             type="text"
             onChange={this.onTextChange.bind(this)}
-            value={this.state.value}
-          ></input>
-          {this.state.showErase ? (
-            <img
-              src={cancelIcon}
-              alt="Cancel Icon"
-              className="close-icon"
-              onClick={this.clearText.bind(this)}
-            ></img>
+            value={value}
+          />
+          {showErase ? (
+            <div onClick={this.clearText.bind(this)}>
+              <img src={cancelIcon} alt="Cancel Icon" className="close-icon" />
+            </div>
           ) : null}
         </div>
 
         <div className="profile-icon" onClick={this.openDropDown.bind(this)}>
           <img
             src="https://m.media-amazon.com/images/G/02/CerberusPrimeVideo-FN38FSBD/adult-1.png"
-            alt="profile image"
+            alt="profile"
             className="avatar"
-          ></img>
+          />
           <div className="name">Andrei...</div>
-          {this.state.isOpen ? (
+          {isOpen ? (
             <img
               key="dropup"
               src={dropUpIcon}
@@ -76,7 +75,7 @@ class SearchComponent extends Component {
               className="dropDownIcon forward"
             />
           )}
-          {this.state.isOpen ? <DropMenu /> : null}
+          {isOpen ? <DropMenu /> : null}
         </div>
       </div>
     );

@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import "./Carrousel.scss";
-import rightArrow from "../../assets/icons/right-arrow.svg";
-import leftArrow from "../../assets/icons/left-arrow.svg";
-import { carouselData } from "../../utils/dummy-data";
+import React, { Component } from 'react';
+import './Carrousel.scss';
+import rightArrow from '../../assets/icons/right-arrow.svg';
+import leftArrow from '../../assets/icons/left-arrow.svg';
+import { carouselData } from '../../utils/dummy-data';
 
 class Carrousel extends Component {
   constructor() {
@@ -14,48 +14,51 @@ class Carrousel extends Component {
   }
 
   getBottomItems() {
-    let elements = [];
+    const elements = [];
+    const { currentIndex } = this.state;
+
     for (let i = 0; i < this.images.length; i++) {
-      if (i === this.state.currentIndex) {
-        elements.push(
-          <div key={i} className="bottom-current-item-selected"></div>
-        );
+      if (i === currentIndex) {
+        elements.push(<div key={i} className="bottom-current-item-selected" />);
       } else {
-        elements.push(<div key={i} className="bottom-current-item"></div>);
+        elements.push(<div key={i} className="bottom-current-item" />);
       }
     }
     return elements;
   }
 
   next() {
+    const { currentIndex } = this.state;
     this.setState({
-      currentIndex: this.state.currentIndex + 1,
+      currentIndex: currentIndex + 1,
     });
   }
 
   previus() {
+    const { currentIndex } = this.state;
     this.setState({
-      currentIndex: this.state.currentIndex - 1,
+      currentIndex: currentIndex - 1,
     });
   }
 
   render() {
+    const { currentIndex } = this.state;
     return (
       <div className="carrousel-container">
         <img
-          key={this.state.currentIndex}
-          src={this.images[this.state.currentIndex]}
-          alt="Carrousel image"
-        ></img>
+          key={currentIndex}
+          src={this.images[currentIndex]}
+          alt="Carrousel"
+        />
         <div className="bottom-current">{this.getBottomItems()}</div>
-        {this.state.currentIndex !== 0 ? (
+        {currentIndex !== 0 ? (
           <div className="left-button1" onClick={this.previus.bind(this)}>
-            <img src={leftArrow}></img>
+            <img src={leftArrow} alt="left arrow" />
           </div>
         ) : null}
-        {this.state.currentIndex < this.images.length - 1 ? (
+        {currentIndex < this.images.length - 1 ? (
           <div className="right-button1" onClick={this.next.bind(this)}>
-            <img src={rightArrow}></img>
+            <img src={rightArrow} alt="right arrow" />
           </div>
         ) : null}
       </div>

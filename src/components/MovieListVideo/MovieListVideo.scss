@@ -72,13 +72,16 @@
 
   & .title-movie {
     color: #fff;
-    font-size: 1.8rem;
+    font-size: calc(100vh * 0.035);
     font-weight: bold;
   }
 
   .info-content {
       width: 100%;
       height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
   }
 }
 
@@ -105,26 +108,26 @@
 .play-container {
   display: inline-flex;
   padding: 20px;
-  padding-top: 18px;
-  padding-bottom: 18px;
+  padding-top: calc(100vh * 0.018);
+  padding-bottom: calc(100vh * 0.018);
   background-color: #0f79af;
   border-radius: 30px;
   align-items: center;
 
   & img {
-    height: 20px;
-    width: 20px;
+    height: calc(100vh * 0.02);
+    width: calc(100vh * 0.02);
   }
 
   & div {
     color: white;
-    margin-left: 25px;
+    margin-left: calc(100vh * 0.025);
   }
 }
 
 .add-button-info {
-  height: 30px;
-  width: 30px;
+  height: calc(100vh * 0.03);
+  width: calc(100vh * 0.03);
   border-radius: 50%;
   padding: 10px;
   background-color: black;
@@ -132,7 +135,9 @@
   margin-left: 15px;
 }
 
-.info-spacer {
-  height: 65%;
-  width: 100%;
+.clasificacion-title{
+  color: white;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

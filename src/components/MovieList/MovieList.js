@@ -1,17 +1,19 @@
-import React, { Component } from "react";
-import "./MovieList.scss";
-import MovieListItem from "./MovieListItem/MovieListItem";
-import rightArrow from "../../assets/icons/right-arrow.svg";
-import leftArrow from "../../assets/icons/left-arrow.svg";
-
-import debounce from "lodash.debounce";
+import React, { Component } from 'react';
+import debounce from 'lodash.debounce';
+import PropTypes from 'prop-types';
+import './MovieList.scss';
+import MovieListItem from './MovieListItem/MovieListItem';
+import rightArrow from '../../assets/icons/right-arrow.svg';
+import leftArrow from '../../assets/icons/left-arrow.svg';
 
 class MovieList extends Component {
   constructor(props) {
     super(props);
 
+    const { section } = props;
+
     this.state = {
-      items: props.section.movies,
+      items: section.movies,
       hasOverflow: false,
       canScrollLeft: false,
       canScrollRight: false,
@@ -23,7 +25,7 @@ class MovieList extends Component {
     this.debounceCheckForOverflow = debounce(this.checkForOverflow, 1000);
     this.debounceCheckForScrollPosition = debounce(
       this.checkForScrollPosition,
-      200
+      200,
     );
 
     this.container = null;
@@ -34,24 +36,25 @@ class MovieList extends Component {
     this.checkForScrollPosition();
 
     this.container.addEventListener(
-      "scroll",
-      this.debounceCheckForScrollPosition
+      'scroll',
+      this.debounceCheckForScrollPosition,
     );
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    const { items } = this.state;
+    if (prevState.items.length !== items.length) {
+      this.checkForOverflow();
+      this.checkForScrollPosition();
+    }
   }
 
   componentWillUnmount() {
     this.container.removeEventListener(
-      "scroll",
-      this.debounceCheckForScrollPosition
+      'scroll',
+      this.debounceCheckForScrollPosition,
     );
     this.debounceCheckForOverflow.cancel();
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.items.length !== this.state.items.length) {
-      this.checkForOverflow();
-      this.checkForScrollPosition();
-    }
   }
 
   checkForScrollPosition() {
@@ -63,31 +66,40 @@ class MovieList extends Component {
     });
   }
 
-  checkForOverflow() {
-    const { scrollWidth, clientWidth } = this.container;
-    const hasOverflow = scrollWidth > clientWidth;
-
-    this.setState({ hasOverflow });
+  scrollContainerBy(distance) {
+    this.container.scrollBy({ left: distance, behavior: 'smooth' });
   }
 
-  scrollContainerBy(distance) {
-    this.container.scrollBy({ left: distance, behavior: "smooth" });
+  checkForOverflow() {
+    const { scrollWidth, clientWidth } = this.container
+    const hasOverflow = scrollWidth > clientWidth
+
+    this.setState({ hasOverflow })
   }
 
   buildControls() {
-   
     const { canScrollLeft, canScrollRight } = this.state;
     return (
       <div>
         {canScrollLeft ? (
-          <div className="left-button" onClick={()=>{this.scrollContainerBy(-window.innerWidth)}}>
-            <img src={leftArrow}></img>
+          <div
+            className="left-button"
+            onClick={() => {
+              this.scrollContainerBy(-window.innerWidth);
+            }}
+          >
+            <img src={leftArrow} alt="left arrow" />
           </div>
         ) : null}
 
         {canScrollRight ? (
-          <div className="right-button" onClick={()=>{this.scrollContainerBy(window.innerWidth)}}>
-            <img src={rightArrow}></img>
+          <div
+            className="right-button"
+            onClick={() => {
+              this.scrollContainerBy(window.innerWidth);
+            }}
+          >
+            <img src={rightArrow} alt="right arrow" />
           </div>
         ) : null}
       </div>
@@ -95,9 +107,10 @@ class MovieList extends Component {
   }
 
   render() {
+    const { section, title } = this.props;
     return (
       <div className="main">
-        <div className="title">{this.props.section.title}</div>
+        <div className="title">{section.title}</div>
         <div className="list-main">
           <ul
             className="list"
@@ -105,18 +118,12 @@ class MovieList extends Component {
               this.container = node;
             }}
           >
-            {this.props.section.movies.map((e) => {
-              return (
-                <MovieListItem
-                  key={`${e.title}-${this.props.title}`}
-                  movie={e}
-                />
-              );
-            })}
+            {section.movies.map((e) => (
+              <MovieListItem key={`${e.title}-${title}`} movie={e} />
+            ))}
           </ul>
 
           {this.buildControls()}
-          
         </div>
       </div>
     );
@@ -124,3 +131,7 @@ class MovieList extends Component {
 }
 
 export default MovieList;
+
+MovieList.propTypes = {
+  section: PropTypes.object.isRequired,
+};

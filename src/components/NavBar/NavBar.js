@@ -1,36 +1,36 @@
-import React from "react";
-import "./NavBar.scss";
-import SearchComponent from "./SearchComponent/SearchComponent";
-
+import React from 'react';
+import PropTypes from 'prop-types';
+import './NavBar.scss';
+import SearchComponent from './SearchComponent/SearchComponent';
 
 const items = [
   {
-    title: "Inicio",
+    title: 'Inicio',
   },
   {
-    title: "Series",
+    title: 'Series',
   },
   {
-    title: "Peliculas",
+    title: 'Peliculas',
   },
   {
-    title: "Infantil",
+    title: 'Infantil',
   },
 ];
 
 const NavBar = (props) => {
-  const currentIndex = props.index;
+  const { index } = props;
 
-  const getItem = (index) => {
-    return (
-      <li
-        className={currentIndex == index ? "item-selected" : ""}
-        // onClick={() => props.changePage(index)}
-      >
-        <a href="#">{items[index].title}</a>
-      </li>
-    );
-  };
+  const currentIndex = index;
+
+  const getItem = (iindex) => (
+    <li
+      className={currentIndex === iindex ? 'item-selected' : ''}
+      // onClick={() => props.changePage(index)}
+    >
+      <a href="#">{items[iindex].title}</a>
+    </li>
+  );
 
   return (
     <div className="main-nav">
@@ -58,3 +58,7 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+
+NavBar.propTypes = {
+  index: PropTypes.number.isRequired,
+};

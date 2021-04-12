@@ -1,5 +1,6 @@
-import React, { Component } from "react";
-import "./IconPopUP.scss";
+import React, { Component } from 'react';
+import './IconPopUP.scss';
+import PropTypes from 'prop-types';
 
 class IconPopUP extends Component {
   constructor() {
@@ -11,20 +12,21 @@ class IconPopUP extends Component {
   }
 
   show() {
-    console.log("enter");
     this.setState({
       showDialog: true,
     });
   }
 
   hide() {
-    console.log("leave");
     this.setState({
       showDialog: false,
     });
   }
 
   render() {
+    const { showDialog } = this.state;
+    const { icon, text } = this.props;
+
     return (
       <div
         onMouseEnter={this.show.bind(this)}
@@ -32,15 +34,18 @@ class IconPopUP extends Component {
         className="icon-container"
       >
         <div className="icon-preview">
-          <img src={this.props.icon}></img>
+          <img src={icon} alt="icon props" />
         </div>
 
-        {this.state.showDialog ? (
-          <div className="popup-info">{this.props.text}</div>
-        ) : null}
+        {showDialog ? <div className="popup-info">{text}</div> : null}
       </div>
     );
   }
 }
 
 export default IconPopUP;
+
+IconPopUP.propTypes = {
+  text: PropTypes.string.isRequired,
+  icon: PropTypes.string.isRequired,
+};
