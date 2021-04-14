@@ -11,8 +11,6 @@
         "no-plusplus": "off",
         "jsx-a11y/anchor-is-valid": "off",
         "react/forbid-prop-types": [true, { "forbid": ["object"], "checkContextTypes": true, "checkChildContextTypes": true }]
-        
-        
     },
     "plugins": ["react", "import", "jsx-a11y"],
     "extends": ["airbnb"],
