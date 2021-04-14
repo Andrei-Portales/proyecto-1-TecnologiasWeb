@@ -2,19 +2,24 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './NavBar.scss';
 import SearchComponent from './SearchComponent/SearchComponent';
+import { Link } from 'react-router-dom';
 
 const items = [
   {
     title: 'Inicio',
+    route: '/',
   },
   {
     title: 'Series',
+    route: '/series',
   },
   {
     title: 'Peliculas',
+    route: '/peliculas',
   },
   {
     title: 'Infantil',
+    route: '/infantil',
   },
 ];
 
@@ -23,14 +28,16 @@ const NavBar = (props) => {
 
   const currentIndex = index;
 
-  const getItem = (iindex) => (
-    <li
-      className={currentIndex === iindex ? 'item-selected' : ''}
-      // onClick={() => props.changePage(index)}
-    >
-      <a href="#">{items[iindex].title}</a>
-    </li>
-  );
+  const getItem = (iindex) => {
+    return (
+      <li
+        className={currentIndex === iindex ? 'item-selected' : ''}
+        // onClick={() => props.changePage(index)}
+      >
+        <Link to={items[iindex].route}>{items[iindex].title}</Link>
+      </li>
+    );
+  }
 
   return (
     <div className="main-nav">
