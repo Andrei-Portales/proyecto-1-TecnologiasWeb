@@ -1,36 +1,43 @@
 @import "../../../../node_modules/animate.css/animate.min.css";
 
 
-
 .container {
   margin-right: 10px;
-  height: 165px;
-  width: 305px;
   position: relative;
+  width: 305px;
+
+  &:hover {
+    height: 350px;
+    // z-index: 1;
+  }
 }
 
 .item-image {
-  height: inherit;
-  width: inherit;
   border-radius: 2px;
+  height: 165px;
 }
 
 .preview {
   position: absolute;
   top: -10px;
   display: block;
-  z-index: 1;
-  width: 305px;
+  z-index: 2;
+  width: 300px;
   background-color: #1a242f;
   border-radius: 7px;
-  animation: fadeIn; 
+  animation: fadeIn;
   animation-duration: 400ms;
 
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+
   & img {
-      height: 165px;
-      width: 100%;
-      border-radius: 2px;
-      display: block;
+    height: 165px;
+    width: 100%;
+    border-radius: 2px;
+    display: block;
   }
 }
 

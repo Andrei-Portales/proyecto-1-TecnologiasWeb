@@ -1,5 +1,6 @@
 .list-main {
   position: relative;
+  height: 175px;
 }
 
 .main {
@@ -42,7 +43,6 @@
   width: 38px;
   position: absolute;
   text-align: center;
-
   background-color: rgba(0, 0, 0, 0.4);
 
   &:hover {
@@ -59,6 +59,7 @@
   top: 0;
   bottom: 0;
   left: 0px;
+ 
 }
 
 .right-button {

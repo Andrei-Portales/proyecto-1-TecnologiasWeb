@@ -35,15 +35,12 @@ class MovieListItem extends Component {
         onMouseEnter={this.mouseEnter.bind(this)}
         onMouseLeave={this.mouseLeave.bind(this)}
       >
-
         <img src={movie.image} className="item-image" alt="movie" />
 
         {showDialog ? (
           <div className="preview">
-            
-           
-            {<img src={movie.image}  alt="movie"  className="image-preview" />}
-       
+            {<img src={movie.image} alt="movie" className="image-preview" />}
+
             <div className="content-movie-preview">
               <div className="play-data">
                 <div>
