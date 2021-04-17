@@ -36,7 +36,7 @@ npm run build
 - react-router-dom
 
 ## Paquetes de desarrollo utilizados para este proyecto 📦 👩‍💻
-.
+
 -  @babel/core
 -  @babel/preset-env
 -  @babel/preset-react
